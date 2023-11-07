@@ -1,6 +1,6 @@
 function Table ({data}) {
     if (!data || data.length === 0) {
-        return <div>No data to display</div>;
+        return <div className="flex justify-center h-full mt-40 text-2xl text-slate-400">No data to display</div>;
     }
 
     const headers = Object.keys(data[0]);

@@ -1,10 +1,8 @@
 import { useContext } from "react";
 import QueryContext from "../context/QueryContext";
-import Table from "./Table"
+import Table from "./Table";
 
 import Papa from "papaparse";
-
-window.Papa = Papa;
 
 function ResultSection() {
     const { queryResponse } = useContext(QueryContext);
