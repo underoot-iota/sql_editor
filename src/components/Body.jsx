@@ -9,6 +9,11 @@ import QueryContext from "../context/QueryContext";
 function Body() {
     const [selectedQuery, setSelectedQuery] = useState(null);
     const [queryResponse, setQueryResponse] = useState(null);
+    const [queryHistory, setQueryHistory] = useState([]);
+
+    function addQueryToHistory(query) {
+        setQueryHistory([...queryHistory, query]);
+    }
 
     return (
         <QueryContext.Provider
@@ -17,6 +22,8 @@ function Body() {
                 setSelectedQuery,
                 queryResponse,
                 setQueryResponse,
+                queryHistory,
+                addQueryToHistory,
             }}
         >
             <div className="flex flex-row h-full">

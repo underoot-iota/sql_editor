@@ -5,6 +5,8 @@ const QueryContext = createContext({
     setSelectedQuery: () => {},
     queryResponse: null,
     setQueryResponse: () => {},
+    queryHistory: [],
+    addQueryToHistory: () => {},
 });
 
 export default QueryContext;

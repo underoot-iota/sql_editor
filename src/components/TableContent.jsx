@@ -10,4 +10,10 @@ function TableContent() {
     );
 }
 
+function TableName() {
+    return (
+        <></>
+    );
+}
+
 export default TableContent;

@@ -11,7 +11,8 @@ import EditorHeader from "./EditorHeader";
 import toast from "react-hot-toast";
 
 function EditorSection() {
-    const { selectedQuery, setQueryResponse } = useContext(QueryContext);
+    const { selectedQuery, setQueryResponse, addQueryToHistory } =
+        useContext(QueryContext);
     // const [query, setQuery] = useState(selectedQuery?.query || "");
     const originalQuery = selectedQuery?.query || "";
     const aceEditorRef = useRef(null);
@@ -27,14 +28,18 @@ function EditorSection() {
 
     // TODO: useCallback causes issues below
     const runQuery = () => {
-        let currQurey = aceEditorRef.current.editor.getValue();
-        if (currQurey === "") {
+        let currQuery = aceEditorRef.current.editor.getValue();
+        if (currQuery === "") {
             toast("Please select a query!", {
                 icon: "⚠️",
             });
-        } else if ((currQurey.toLowerCase() === originalQuery.toLowerCase()) || (currQurey.toLowerCase() + ';' === originalQuery.toLowerCase())) {
-            toast.success("Query executed!");
+        } else if (
+            currQuery.toLowerCase() === originalQuery.toLowerCase() ||
+            currQuery.toLowerCase() + ";" === originalQuery.toLowerCase()
+        ) {
             setQueryResponse(selectedQuery?.response);
+            addQueryToHistory(selectedQuery);
+            toast.success("Query executed!");
         } else {
             toast.error("Query modified!");
         }
