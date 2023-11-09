@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import EditorResult from "./EditorResult";
-import LeftSidebar from "./LeftSidebar";
-import RightSidebar from "./RightSidebar";
+import EditorResult from "./Editor/EditorResult";
+import LeftSidebar from "./LeftSidebar/LeftSidebar";
+import RightSidebar from "./RightSidebar/RightSidebar";
 
-import QueryContext from "../context/QueryContext";
+import QueryContext from "../../context/QueryContext";
 
 function Body() {
     const [selectedQuery, setSelectedQuery] = useState(null);

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import QueryContext from "../context/QueryContext";
+import QueryContext from "../../../../context/QueryContext";
 import HistoryComponent from "./HistoryComponent";
 
 function HistoryContent() {

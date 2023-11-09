@@ -5,8 +5,8 @@ import "ace-builds/src-noconflict/mode-mysql";
 import "ace-builds/src-noconflict/theme-github";
 import "ace-builds/src-noconflict/ext-language_tools";
 
-import QueryContext from "../context/QueryContext";
-import EditorHeader from "./EditorHeader";
+import QueryContext from "../../../../context/QueryContext";
+import EditorHeader from "../Editor Header/EditorHeader";
 
 import toast from "react-hot-toast";
 
@@ -65,14 +65,14 @@ function EditorSection() {
                 <AceEditor
                     ref={aceEditorRef}
                     mode="mysql"
-                    theme="monokai"
+                    theme="github"
                     width="100%"
                     height="1100px"
                     placeholder="-- Write your MySQL queries here..."
                     showPrintMargin={false}
                     // onChange={handleOnChange}
                     fontSize={18}
-                    name="UNIQUE_ID_OF_DIV"
+                    name="SQL-Editor"
                     editorProps={{ $blockScrolling: true }}
                     value={selectedQuery?.query || ""}
                     setOptions={{

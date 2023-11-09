@@ -1,4 +1,4 @@
-import queries from "../DataSource/queries.json";
+import queries from "../../../DataSource/queries.json";
 import QueryComponent from "./QueryComponent";
 
 function QueryContent() {

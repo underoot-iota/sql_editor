@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import QueryContext from "../context/QueryContext";
-import { BiColumns } from "react-icons/bi"
+import QueryContext from "../../../context/QueryContext";
+import { BiColumns } from "react-icons/bi";
 
 function QueryComponent(query) {
     const { selectedQuery, setSelectedQuery } = useContext(QueryContext);
@@ -15,9 +15,9 @@ function QueryComponent(query) {
                 selectedQuery?.id === query.id ? "bg-slate-200" : "bg-white"
             }`}
         >
-            <BiColumns className="text-xl"/>
+            <BiColumns className="text-xl" />
             Query {query.id}
-            </div>
+        </div>
     );
 }
 

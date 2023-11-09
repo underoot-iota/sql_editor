@@ -1,5 +1,5 @@
 import { useContext, useCallback } from "react";
-import QueryContext from "../context/QueryContext";
+import QueryContext from "../../../../context/QueryContext";
 import Table from "./Table";
 import Papa from "papaparse";
 import toast from "react-hot-toast";
@@ -13,7 +13,6 @@ function ResultSection() {
         header: true,
         skipEmptyLines: true,
         complete: (results) => {
-            console.log("Parsed Data:", results.data);
             csvData = results.data;
         },
     });

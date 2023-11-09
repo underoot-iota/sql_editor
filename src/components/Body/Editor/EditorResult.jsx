@@ -1,5 +1,5 @@
-import EditorSection from "./EditorSection";
-import ResultSection from "./ResultSection";
+import EditorSection from "./Edtior Section/EditorSection";
+import ResultSection from "./Result Section/ResultSection";
 
 import { Allotment } from "allotment";
 import "allotment/dist/style.css";
