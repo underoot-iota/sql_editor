@@ -7,6 +7,7 @@ A SQL Editor built using Vite, React, and Tailwind CSS for a modern, responsive 
 Check out the live application here: ![favicon-16x16](https://github.com/underoot-iota/sql_editor/assets/76626284/22abb920-5235-414b-a39e-54b949a65bdd) 
   [SQL Editor App](https://sql-editor-mu.vercel.app/#)
 
+<br>
 
 ## 🖊️ Features
 
@@ -18,13 +19,15 @@ Check out the live application here: ![favicon-16x16](https://github.com/underoo
 - **Query History**: Recently ran queries can be seen in history section.
 - **Dark Mode**: Dark mode can be toggled on or off, for seamless user experience.
 
+<br>
 
 ## 🧑‍💻 Tech Stack
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) 
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-  
+<br>
+
 ## ⚙️ Dependencies
 
 - **Code Editor**: React Ace Editor
@@ -34,6 +37,7 @@ Check out the live application here: ![favicon-16x16](https://github.com/underoo
 - **Deployment**: Vercel
 - **Version Control**: GitHub
 
+<br>
 
 ## ⚡ Performance
 
@@ -43,6 +47,7 @@ The application scores a perfect 100 on Chrome Lighthouse, highlighting its exce
 
 ![Performance_Scores](https://github.com/underoot-iota/sql_editor/assets/76626284/1bcc0951-8325-4d3c-908e-0c56d38be862)
 
+<br>
 
 ## 📀 Optimizations
 
@@ -50,16 +55,19 @@ The application scores a perfect 100 on Chrome Lighthouse, highlighting its exce
 - **Lazy Loading**: Used for deferring the loading of non-critical resources at page load time.
 - **Efficient Asset Management**: Minified assets and images, leveraging caching for improved performance.
 
+<br>
 
 ## 🎨 UI Design
 ![figma](https://github.com/underoot-iota/sql_editor/assets/76626284/a21f6592-6e28-4d53-b824-1170f5c1df8f)
 [Figma Link](https://www.figma.com/file/t96ioNm9eNfTqXZw40sZuE/Untitled?type=design&node-id=0%3A1&mode=design&t=mVlnzUa7mys9lU74-1)
 
+<br>
 
 ## 🔥 Installation
 
 This application does not require installation. It runs in a web browser and is accessible via the [deployed link](https://sql-editor-mu.vercel.app/#).
 
+<br>
 
 ## 🛠️ Local Development
 
@@ -88,6 +96,7 @@ npm run dev
 ```
 5. Open http://localhost:3000 (or the url mentioned in the console) to view it in the browser.
 
+<br>
 
 ## 🖼️ Screenshot
 ![SQL Editor](https://github.com/underoot-iota/sql_editor/assets/76626284/e338d0bf-ad5b-46f4-bda1-c3ae4297e949)
