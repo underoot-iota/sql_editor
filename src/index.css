@@ -1,4 +1,10 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom CSS for SideBar transition */
+.transition-width-300 {
+    transition: width 300ms;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

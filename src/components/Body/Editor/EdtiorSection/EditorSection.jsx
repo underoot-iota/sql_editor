@@ -63,6 +63,7 @@ function EditorSection() {
     };
 
     const clearEditor = () => {
+        aceEditorRef.current.editor.setValue("")
         setSelectedQuery(null);
     };
 

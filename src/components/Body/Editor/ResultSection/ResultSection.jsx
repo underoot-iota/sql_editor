@@ -65,7 +65,7 @@ function ResultSection() {
                     Output
                     <button
                         type="button"
-                        className="border-2 px-4 py-0.5 text-indigo-500 border-indigo-500 text-base font-medium rounded dark:text-indigo-400 dark:border-indigo-400"
+                        className="border-2 px-4 py-0.5 text-indigo-500 hover:text-indigo-700 border-indigo-500 hover:border-indigo-700 text-base font-medium rounded dark:text-indigo-400 dark:hover:text-indigo-600 dark:border-indigo-400 dark:hover:border-indigo-600"
                         onClick={exportCSV}
                     >
                         Export CSV

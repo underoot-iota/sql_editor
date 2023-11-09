@@ -6,8 +6,8 @@ function Sidebar({ children, isRightSideBar }) {
 
     return (
         <section
-            className={`flex flex-col ${isSideBarCollapsed ? "w-96" : "w-20"}
-                duration-300 border-x-2 h-full relative
+            className={`transition-width-300 flex flex-col ${isSideBarCollapsed ? "w-96" : "w-20"}
+                border-x-2 h-full relative
                 bg-white dark:bg-gray-800 border-indigo-50 dark:border-gray-700`}
         >
             <BiSolidChevronLeft

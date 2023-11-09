@@ -30,7 +30,7 @@ function Navbar() {
                 <nav className="w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between">
                     <a
                         className="flex-none text-4xl font-semibold text-gray-900 dark:text-white"
-                        href="#"
+                        href=""
                     >
                         <span className="text-indigo-500">SQL </span>Editor
                     </a>

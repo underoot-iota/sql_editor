@@ -19,7 +19,7 @@ function EditorHeader({ onCopy, onRun, clearEditor }) {
                     className="flex items-center justify-center gap-1 bg-transparent font-medium"
                     onClick={clearEditor}
                 >
-                    <span className="text-indigo-600 hover:text-indigo-200 dark:text-indigo-400">Clear</span>
+                    <span className="text-indigo-600 hover:text-indigo-700 dark:text-indigo-400">Clear</span>
                 </button>
                 <button
                     type="button"
