@@ -11,7 +11,7 @@ function QueryComponent(query) {
             type="button"
             title={query.name}
             onClick={() => setSelectedQuery(query)}
-            className={`w-full flex items-center gap-2 py-2 border-b border-gray-100 dark:border-gray-700 font-medium text-base text-indigo-500 dark:text-white pl-4 cursor-pointer 
+            className={`text-indigo-600 dark:text-white w-full flex items-center gap-2 py-2 border-b border-gray-200 dark:border-gray-700 font-medium text-base  pl-4 cursor-pointer 
                         ${selectedQuery?.id === query.id ? "bg-slate-200 dark:bg-gray-600" : "bg-white dark:bg-gray-800"}
                         hover:bg-slate-100 dark:hover:bg-gray-700`}
         >

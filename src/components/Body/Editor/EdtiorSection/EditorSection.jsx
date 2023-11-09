@@ -66,16 +66,23 @@ function EditorSection() {
         setSelectedQuery(null);
     };
 
-    const handleOnChange = () => {
-        console.log(aceEditorRef.current.editor.getValue());
-    };
+    // TODO: Can use this to store text-input in local storage
+    // const handleOnChange = () => {
+    //     console.log(aceEditorRef.current.editor.getValue());
+    // };
 
     useEffect(() => {
-        console.log("useEffect::" + theme);
-        aceEditorRef.current.editor.setTheme(`ace/theme/${theme}`);
-    }, [theme]);
+        const textInput =
+            aceEditorRef.current?.editor?.container?.querySelectorAll(
+                ".ace_text-input"
+            );
 
-    console.log("EditorSection::" + theme);
+        if (textInput) {
+            textInput.forEach((input) => {
+                input.setAttribute("aria-label", "Code editor input");
+            });
+        }
+    }, []);
 
     return (
         <section className="flex flex-col">
@@ -86,8 +93,6 @@ function EditorSection() {
             />
             <div className="overflow-auto z-0">
                 <AceEditor
-                    aria-label="Code Editor" // This should be descriptive of the actual input
-                    role="code-editor input"
                     key={theme}
                     ref={aceEditorRef}
                     mode="mysql"

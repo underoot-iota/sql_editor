@@ -19,11 +19,11 @@ function EditorHeader({ onCopy, onRun, clearEditor }) {
                     className="flex items-center justify-center gap-1 bg-transparent font-medium"
                     onClick={clearEditor}
                 >
-                    <span className="text-indigo-500">Clear</span>
+                    <span className="text-indigo-600 hover:text-indigo-700">Clear</span>
                 </button>
                 <button
                     type="button"
-                    className="flex gap-1 bg-indigo-400 hover:bg-indigo-700 text-white text-base font-medium py-0.5 pl-1 pr-4 rounded"
+                    className="flex gap-1 bg-indigo-500 hover:bg-indigo-700 text-white text-base font-medium py-0.5 pl-1 pr-4 rounded"
                     onClick={onRun}
                 >
                     <BiPlay className="text-2xl" />
