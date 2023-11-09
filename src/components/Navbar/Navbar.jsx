@@ -10,7 +10,7 @@ const ThemeIcon = () => {
         setDarkTheme(!darkTheme);
     };
 
-    const darkToggleButtonStyle = ["text-2xl mr-3 mt-2 hover:text-indigo-400 cursor-pointer"]
+    const darkToggleButtonStyle = ["text-2xl mr-3 mt-2 hover:text-indigo-500 cursor-pointer"]
 
     return (
         <span onClick={toggleDarkMode}>
@@ -32,7 +32,7 @@ function Navbar() {
                         className="flex-none text-4xl font-semibold text-gray-900 dark:text-white"
                         href="#"
                     >
-                        <span className="text-indigo-400">SQL </span>Editor
+                        <span className="text-indigo-500">SQL </span>Editor
                     </a>
                 </nav>
                 <ThemeIcon />

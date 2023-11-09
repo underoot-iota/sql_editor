@@ -10,7 +10,7 @@ function EditorHeader({ onCopy, onRun, clearEditor }) {
             </span>
             <div className="flex items-center gap-6 pr-4">
                 <BiCopy
-                    className="text-indigo-400 text-2xl cursor-pointer"
+                    className="text-indigo-500 text-2xl cursor-pointer"
                     onClick={onCopy}
                 />
                 <Toaster position="top-center" />

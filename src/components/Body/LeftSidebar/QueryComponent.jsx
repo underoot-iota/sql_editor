@@ -6,7 +6,7 @@ function QueryComponent(query) {
     const { selectedQuery, setSelectedQuery } = useContext(QueryContext);
 
     return (
-        <div
+        <li
             key={query.id}
             type="button"
             title={query.name}
@@ -17,7 +17,7 @@ function QueryComponent(query) {
         >
             <BiColumns className="text-xl text-current" />
             Query {query.id}
-        </div>
+        </li>
     );
 }
 

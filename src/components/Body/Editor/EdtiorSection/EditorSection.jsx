@@ -85,7 +85,9 @@ function EditorSection() {
                 clearEditor={clearEditor}
             />
             <div className="overflow-auto z-0">
+                <label for="AceEditor"/>
                 <AceEditor
+                    id="AceEditor"
                     key={theme}
                     ref={aceEditorRef}
                     mode="mysql"
