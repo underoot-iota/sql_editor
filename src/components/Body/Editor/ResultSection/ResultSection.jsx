@@ -8,7 +8,7 @@ function ResultSection() {
     const { queryResponse } = useContext(QueryContext);
     let csvData;
 
-    // Parse the queryResponse to csvData
+    //Parsing queryResponse
     Papa.parse(queryResponse || "", {
         header: true,
         skipEmptyLines: true,
@@ -17,34 +17,33 @@ function ResultSection() {
         },
     });
 
-    // This function will be triggered when the export button is clicked
     const exportCSV = useCallback(() => {
         if (!csvData || csvData.length === 0) {
             toast.error("No data to export!");
             return;
         }
 
-        // Convert the csvData to a CSV string
+        //Converting csvData to CSV string
         const csv = Papa.unparse(csvData);
 
-        // Create a Blob from the CSV String
+        //Creating a Blob from CSV String
         const csvBlob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
 
-        // Create a link element
+        //Creating a link element
         const link = document.createElement("a");
         const url = URL.createObjectURL(csvBlob);
 
-        // Set link attributes and click to start download
+        //Set link attributes and click to start download
         link.setAttribute("href", url);
         link.setAttribute("download", "export.csv");
         link.style.visibility = "hidden";
 
-        // Append to the DOM, click, and remove
+        //Append to DOM, click, and remove
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
 
-        // Display success toast after export
+        //Display success toast after export
         toast.success("Data exported successfully!");
     }, [csvData]);
 
@@ -57,7 +56,7 @@ function ResultSection() {
                     <button
                         type="button"
                         className="border-2 px-4 py-0.5 text-indigo-500 border-indigo-500 text-base font-medium rounded"
-                        onClick={exportCSV} // Add the onClick event handler
+                        onClick={exportCSV}
                     >
                         Export CSV
                     </button>

@@ -15,7 +15,7 @@ function TableContent() {
         "fax",
     ];
 
-    const inventory_table = [
+    const inventory_data = [
         "product_id",
         "product_name",
         "product_type",
@@ -40,20 +40,13 @@ function TableContent() {
                 Tables
             </header>
             <div className=" dark:bg-gray-600 overflow-scroll">
-                <Dropdown header="customers" selections={customers} />
-                <Dropdown
-                    header="inventory_table"
-                    selections={inventory_table}
-                />
                 <Dropdown header="accounts" selections={accounts} />
+                <Dropdown header="customers" selections={customers} />
+                <Dropdown header="inventory_data" selections={inventory_data} />
                 <Dropdown header="orders" selections={orders} />
             </div>
         </section>
     );
-}
-
-function TableName() {
-    return <></>;
 }
 
 export default TableContent;

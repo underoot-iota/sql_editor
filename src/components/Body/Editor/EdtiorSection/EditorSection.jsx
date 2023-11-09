@@ -6,7 +6,7 @@ import "ace-builds/src-noconflict/theme-github";
 import "ace-builds/src-noconflict/ext-language_tools";
 
 import QueryContext from "../../../../context/QueryContext";
-import EditorHeader from "../Editor Header/EditorHeader";
+import EditorHeader from "../EditorHeader/EditorHeader";
 
 import toast from "react-hot-toast";
 
