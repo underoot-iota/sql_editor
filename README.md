@@ -38,6 +38,7 @@ Check out the live application here: ![favicon-16x16](https://github.com/underoo
 ## ⚡ Performance
 
 The application scores a perfect 100 on Chrome Lighthouse, highlighting its excellence in performance, accessibility, best practices, and SEO. These metrics underscore the application's fast load times, efficient code practices, and user-centered design.
+
 ![Performance](https://github.com/underoot-iota/sql_editor/assets/76626284/3d91bf75-a3d7-408e-a4a3-a00f1e5b412d)
 
 ![Performance_Scores](https://github.com/underoot-iota/sql_editor/assets/76626284/1bcc0951-8325-4d3c-908e-0c56d38be862)
