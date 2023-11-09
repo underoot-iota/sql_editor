@@ -28,7 +28,7 @@ function EditorSection() {
     } = useContext(QueryContext);
 
     const { darkTheme } = useContext(ThemeContext);
-    const theme = darkTheme ? "monokai" : "github";
+    const theme = darkTheme ? "monokai" : "xcode";
 
     const originalQuery = selectedQuery?.query || "";
     const aceEditorRef = useRef(null);

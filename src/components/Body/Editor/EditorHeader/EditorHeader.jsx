@@ -10,7 +10,7 @@ function EditorHeader({ onCopy, onRun, clearEditor }) {
             </span>
             <div className="flex items-center gap-6 pr-4">
                 <BiCopy
-                    className="text-indigo-500 text-2xl cursor-pointer"
+                    className="text-indigo-500 text-2xl cursor-pointer dark:text-indigo-400"
                     onClick={onCopy}
                 />
                 <Toaster position="top-center" />
@@ -19,11 +19,11 @@ function EditorHeader({ onCopy, onRun, clearEditor }) {
                     className="flex items-center justify-center gap-1 bg-transparent font-medium"
                     onClick={clearEditor}
                 >
-                    <span className="text-indigo-600 hover:text-indigo-700">Clear</span>
+                    <span className="text-indigo-600 hover:text-indigo-200 dark:text-indigo-400">Clear</span>
                 </button>
                 <button
                     type="button"
-                    className="flex gap-1 bg-indigo-500 hover:bg-indigo-700 text-white text-base font-medium py-0.5 pl-1 pr-4 rounded"
+                    className="flex gap-1 bg-indigo-600 hover:bg-indigo-700 text-white text-base font-medium py-0.5 pl-1 pr-4 rounded"
                     onClick={onRun}
                 >
                     <BiPlay className="text-2xl" />
