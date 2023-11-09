@@ -1,6 +1,9 @@
 function HistoryComponent(query) {
     return (
-        <div key={query.id} className={`block pl-2 py-1 bg-white}`}>
+        <div
+            key={query.id}
+            className="w-full px-4 py-4 border-b border-gray-100 font-medium text-base text-gray-700"
+        >
             Query {query.id}
         </div>
     );

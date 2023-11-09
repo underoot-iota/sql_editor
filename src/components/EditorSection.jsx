@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback, useContext } from "react";
+import React, { useRef, useCallback, useContext } from "react";
 import AceEditor from "react-ace";
 
 import "ace-builds/src-noconflict/mode-mysql";
@@ -11,9 +11,13 @@ import EditorHeader from "./EditorHeader";
 import toast from "react-hot-toast";
 
 function EditorSection() {
-    const { selectedQuery, setQueryResponse, addQueryToHistory } =
-        useContext(QueryContext);
-    // const [query, setQuery] = useState(selectedQuery?.query || "");
+    const {
+        selectedQuery,
+        setSelectedQuery,
+        setQueryResponse,
+        addQueryToHistory,
+    } = useContext(QueryContext);
+
     const originalQuery = selectedQuery?.query || "";
     const aceEditorRef = useRef(null);
 
@@ -37,6 +41,7 @@ function EditorSection() {
             currQuery.toLowerCase() === originalQuery.toLowerCase() ||
             currQuery.toLowerCase() + ";" === originalQuery.toLowerCase()
         ) {
+            // INFO: Fetch CSV data from API
             setQueryResponse(selectedQuery?.response);
             addQueryToHistory(selectedQuery);
             toast.success("Query executed!");
@@ -45,27 +50,38 @@ function EditorSection() {
         }
     };
 
+    const clearEditor = () => {
+        setSelectedQuery(null);
+    };
+
     return (
-        <section className="flex flex-col h-auto">
-            <EditorHeader onCopy={copyToClipboard} onRun={runQuery} />
-            <AceEditor
-                ref={aceEditorRef}
-                mode="mysql"
-                theme="monokai"
-                width="100%"
-                placeholder="Write your MySQL queries here..."
-                showPrintMargin={false}
-                // onChange={handleOnChange}
-                fontSize={18}
-                name="UNIQUE_ID_OF_DIV"
-                editorProps={{ $blockScrolling: true }}
-                value={selectedQuery?.query || ""}
-                setOptions={{
-                    enableBasicAutocompletion: true,
-                    enableLiveAutocompletion: true,
-                    enableSnippets: true,
-                }}
+        <section className="flex flex-col">
+            <EditorHeader
+                onCopy={copyToClipboard}
+                onRun={runQuery}
+                clearEditor={clearEditor}
             />
+            <div className="overflow-auto z-0">
+                <AceEditor
+                    ref={aceEditorRef}
+                    mode="mysql"
+                    theme="monokai"
+                    width="100%"
+                    height="1100px"
+                    placeholder="-- Write your MySQL queries here..."
+                    showPrintMargin={false}
+                    // onChange={handleOnChange}
+                    fontSize={18}
+                    name="UNIQUE_ID_OF_DIV"
+                    editorProps={{ $blockScrolling: true }}
+                    value={selectedQuery?.query || ""}
+                    setOptions={{
+                        enableBasicAutocompletion: true,
+                        enableLiveAutocompletion: true,
+                        enableSnippets: true,
+                    }}
+                />
+            </div>
         </section>
     );
 }

@@ -1,12 +1,17 @@
 import EditorSection from "./EditorSection";
 import ResultSection from "./ResultSection";
 
+import { Allotment } from "allotment";
+import "allotment/dist/style.css";
+
 function EditorResult() {
     return (
-        <section className="flex flex-col bg-white border-r-2 border-solid border-indigo-50 h-full w-full">
+        <Allotment vertical="true" defaultSizes={[500, 500]}>
             <EditorSection />
-            <ResultSection />
-        </section>
+            <Allotment.Pane maxSize={600} minSize={60}>
+                <ResultSection />
+            </Allotment.Pane>
+        </Allotment>
     );
 }
 

@@ -2,11 +2,13 @@ import React from "react";
 import { BiCopy, BiPlay } from "react-icons/bi";
 import { Toaster } from "react-hot-toast";
 
-function EditorHeader({ onCopy, onRun }) {
+function EditorHeader({ onCopy, onRun, clearEditor }) {
     return (
-        <header className="flex justify-between items-center bg-slate-50 py-3.5 px-4 border-b-2 border-indigo-50 dark:bg-gray-800">
-            <span className="dark:text-white">Input</span>
-            <div className="flex items-center gap-4 pr-4">
+        <header className="flex justify-between items-center bg-slate-50 py-4 px-4 border-b-2 border-indigo-50 dark:bg-gray-800">
+            <span className="pl-4 text-lg font-medium dark:text-white">
+                Input
+            </span>
+            <div className="flex items-center gap-6 pr-4">
                 <BiCopy
                     className="text-indigo-400 text-2xl cursor-pointer"
                     onClick={onCopy}
@@ -14,7 +16,14 @@ function EditorHeader({ onCopy, onRun }) {
                 <Toaster position="top-center" />
                 <button
                     type="button"
-                    className="flex items-center justify-center gap-1 bg-indigo-400 hover:bg-indigo-700 text-white text-base font-medium py-0.5 pl-1 pr-4 rounded"
+                    className="flex items-center justify-center gap-1 bg-transparent font-medium"
+                    onClick={clearEditor}
+                >
+                    <span className="text-indigo-500">Clear</span>
+                </button>
+                <button
+                    type="button"
+                    className="flex gap-1 bg-indigo-400 hover:bg-indigo-700 text-white text-base font-medium py-0.5 pl-1 pr-4 rounded"
                     onClick={onRun}
                 >
                     <BiPlay className="text-2xl" />
