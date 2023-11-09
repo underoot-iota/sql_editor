@@ -1,4 +1,5 @@
-function HistoryComponent(query) {
+function HistoryComponent({query}) {
+    console.log(query)
     return (
         <div
             key={query.id}

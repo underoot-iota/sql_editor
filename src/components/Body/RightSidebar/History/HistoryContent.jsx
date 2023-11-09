@@ -4,6 +4,7 @@ import HistoryComponent from "./HistoryComponent";
 
 function HistoryContent() {
     const { queryHistory } = useContext(QueryContext);
+    
 
     return (
         <section className="flex flex-col h-1/2">
