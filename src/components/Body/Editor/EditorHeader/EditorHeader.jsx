@@ -4,7 +4,7 @@ import { Toaster } from "react-hot-toast";
 
 function EditorHeader({ onCopy, onRun, clearEditor }) {
     return (
-        <header className="flex justify-between items-center bg-slate-50 py-4 px-4 border-b-2 border-indigo-50 dark:bg-gray-800">
+        <header className="flex justify-between items-center bg-slate-50 py-4 px-4 border-b-2 border-indigo-50 dark:border-gray-700 dark:bg-gray-800">
             <span className="pl-4 text-lg font-medium dark:text-white">
                 Input
             </span>

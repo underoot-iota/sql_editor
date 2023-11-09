@@ -2,7 +2,7 @@ function HistoryComponent(query) {
     return (
         <div
             key={query.id}
-            className="w-full px-4 py-4 border-b border-gray-100 font-medium text-base text-gray-700"
+            className="w-full px-4 py-4 border-b border-gray-100 font-medium text-base text-gray-700 dark:border-gray-700 dark:text-gray-300"
         >
             Query {query.id}
         </div>

@@ -1,22 +1,25 @@
 import { useState } from "react";
 import { BiSolidChevronLeft } from "react-icons/bi";
 
-function Sidebar({children, isRightSideBar}) {
+function Sidebar({ children, isRightSideBar }) {
     const [isSideBarCollapsed, setIsSideBarCollapsed] = useState(true);
+
     return (
         <section
-            className={`flex flex-col bg-white border-x-2 border-solid border-indigo-50 h-full relative ${
-                isSideBarCollapsed ? "w-96" : "w-20"
-            } duration-300`}
+            className={`flex flex-col ${isSideBarCollapsed ? "w-96" : "w-20"}
+                duration-300 border-x-2 h-full relative
+                bg-white dark:bg-gray-800 border-indigo-50 dark:border-gray-700`}
         >
             <BiSolidChevronLeft
-                className={`bg-white z-10 text-2xl rounded text-slate-700 absolute ${isRightSideBar ? "-left-3" : "-right-3"} top-4 border border-solid border-indigo-50 cursor-pointer
-            ${(!isSideBarCollapsed ^ isRightSideBar) && "rotate-180"}`}
+                className={`z-10 text-2xl rounded-full absolute top-4 cursor-pointer
+                ${isRightSideBar ? "-left-3" : "-right-3"}
+                bg-white dark:bg-gray-800 text-slate-700 dark:text-gray-200
+                border border-solid border-indigo-50 dark:border-gray-700
+                ${(!isSideBarCollapsed ^ isRightSideBar) && "rotate-180"}`}
                 onClick={() => setIsSideBarCollapsed(!isSideBarCollapsed)}
             />
 
             {isSideBarCollapsed && children}
-
         </section>
     );
 }

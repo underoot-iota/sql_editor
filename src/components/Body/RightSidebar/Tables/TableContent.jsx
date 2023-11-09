@@ -36,14 +36,14 @@ function TableContent() {
 
     return (
         <section className="flex flex-col h-1/2">
-            <header className="w-full bg-slate-50 py-4 text-lg font-medium border-b-2 border-solid border-indigo-50 pl-4 dark:bg-gray-800 dark:text-white">
+            <header className="w-full bg-slate-50 py-4 text-lg font-medium border-b-2 border-solid border-indigo-50 pl-4 dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                 Tables
             </header>
-            <div className=" dark:bg-gray-600 overflow-scroll">
-                <Dropdown header="accounts" selections={accounts} />
-                <Dropdown header="customers" selections={customers} />
-                <Dropdown header="inventory_data" selections={inventory_data} />
-                <Dropdown header="orders" selections={orders} />
+            <div className="overflow-scroll">
+                <Dropdown header="Accounts" selections={accounts} />
+                <Dropdown header="Customers" selections={customers} />
+                <Dropdown header="Inventory Data" selections={inventory_data} />
+                <Dropdown header="Orders" selections={orders} />
             </div>
         </section>
     );

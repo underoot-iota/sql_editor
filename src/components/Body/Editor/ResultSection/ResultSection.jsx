@@ -1,19 +1,29 @@
-import { useContext, useCallback } from "react";
+import { useContext, useCallback, useState } from "react";
 import QueryContext from "../../../../context/QueryContext";
 import Table from "./Table";
 import Papa from "papaparse";
 import toast from "react-hot-toast";
+import ResultFooter from "./ResultFooter";
 
 function ResultSection() {
     const { queryResponse } = useContext(QueryContext);
-    let csvData;
+    let csvData, totalPages, headers, rows;
+
+    const [currentPage, setCurrentPage] = useState(1);
 
     //Parsing queryResponse
     Papa.parse(queryResponse || "", {
         header: true,
         skipEmptyLines: true,
         complete: (results) => {
+            if (results.data?.length == 0) {
+                return;
+            }
             csvData = results.data;
+            totalPages = Math.ceil(csvData.length / 10);
+
+            headers = Object.keys(csvData[0]);
+            rows = csvData.slice(1, csvData.length);
         },
     });
 
@@ -48,14 +58,14 @@ function ResultSection() {
     }, [csvData]);
 
     return (
-        <>
+        <div className="dark:bg-gray-700">
             <div className="relative">
-                <p className="absolute right-1/2 h-2 w-6 bg-slate-300 rounded-sm pointer-events-none" />
-                <header className="flex justify-between items-center bg-slate-50 text-lg px-8 py-3.5 font-medium border-b-2 border-t-2 border-solid border-indigo-50 dark:bg-gray-800 dark:text-white">
+                <p className="absolute right-1/2 h-2 w-6 bg-slate-300 rounded-sm pointer-events-none dark:bg-gray-700" />
+                <header className="flex justify-between items-center bg-slate-50 text-lg px-8 py-3.5 font-medium border-b-2 border-t-2 border-solid border-indigo-50 dark:bg-gray-800 dark:border-gray-700 dark:text-white">
                     Output
                     <button
                         type="button"
-                        className="border-2 px-4 py-0.5 text-indigo-500 border-indigo-500 text-base font-medium rounded"
+                        className="border-2 px-4 py-0.5 text-indigo-500 border-indigo-500 text-base font-medium rounded dark:text-indigo-400 dark:border-indigo-400"
                         onClick={exportCSV}
                     >
                         Export CSV
@@ -63,8 +73,19 @@ function ResultSection() {
                 </header>
             </div>
 
-            <Table data={csvData} />
-        </>
+            {/* Ensure Table component is also styled for dark mode */}
+            <Table headers={headers} rows={rows} currentPage={currentPage} />
+
+            {csvData && (
+                <div className="bg-white dark:bg-gray-700">
+                    <ResultFooter
+                        totalPages={totalPages}
+                        currentPage={currentPage}
+                        setCurrentPage={setCurrentPage}
+                    />
+                </div>
+            )}
+        </div>
     );
 }
 

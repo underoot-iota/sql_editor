@@ -1,11 +1,20 @@
-import React, { useRef, useCallback, useContext } from "react";
+import React, {
+    useRef,
+    useCallback,
+    useContext,
+    useState,
+    useEffect,
+} from "react";
 import AceEditor from "react-ace";
 
 import "ace-builds/src-noconflict/mode-mysql";
-import "ace-builds/src-noconflict/theme-github";
+import "ace-builds/src-noconflict/theme-xcode";
+import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/ext-language_tools";
 
 import QueryContext from "../../../../context/QueryContext";
+import ThemeContext from "../../../../context/ThemeContext";
+
 import EditorHeader from "../EditorHeader/EditorHeader";
 
 import toast from "react-hot-toast";
@@ -17,6 +26,9 @@ function EditorSection() {
         setQueryResponse,
         addQueryToHistory,
     } = useContext(QueryContext);
+
+    const { darkTheme } = useContext(ThemeContext);
+    const theme = darkTheme ? "monokai" : "github";
 
     const originalQuery = selectedQuery?.query || "";
     const aceEditorRef = useRef(null);
@@ -54,6 +66,17 @@ function EditorSection() {
         setSelectedQuery(null);
     };
 
+    const handleOnChange = () => {
+        console.log(aceEditorRef.current.editor.getValue());
+    };
+
+    useEffect(() => {
+        console.log("useEffect::" + theme);
+        aceEditorRef.current.editor.setTheme(`ace/theme/${theme}`);
+    }, [theme]);
+
+    console.log("EditorSection::" + theme);
+
     return (
         <section className="flex flex-col">
             <EditorHeader
@@ -63,9 +86,10 @@ function EditorSection() {
             />
             <div className="overflow-auto z-0">
                 <AceEditor
+                    key={theme}
                     ref={aceEditorRef}
                     mode="mysql"
-                    theme="github"
+                    theme={theme}
                     width="100%"
                     height="1100px"
                     placeholder="-- Write your MySQL queries here..."
