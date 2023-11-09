@@ -85,9 +85,9 @@ function EditorSection() {
                 clearEditor={clearEditor}
             />
             <div className="overflow-auto z-0">
-                <label for="AceEditor"/>
                 <AceEditor
-                    id="AceEditor"
+                    aria-label="Code Editor" // This should be descriptive of the actual input
+                    role="code-editor input"
                     key={theme}
                     ref={aceEditorRef}
                     mode="mysql"
