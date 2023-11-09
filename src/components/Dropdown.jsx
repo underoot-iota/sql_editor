@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BiHash, BiChevronDown, BiChevronRight, BiPlus } from "react-icons/bi";
+import { BiHash, BiChevronDown, BiChevronRight } from "react-icons/bi";
 
 function Dropdown({ header, selections }) {
     const [expanded, setExpanded] = useState(false);
@@ -12,7 +12,7 @@ function Dropdown({ header, selections }) {
         >
             <div
                 onClick={() => setExpanded(!expanded)}
-                className="flex flex-row items-center justify-evenly
+                className="flex flex-row items-center
                 mx-0 text-gray-500
                 cursor-pointer"
             >
@@ -20,7 +20,6 @@ function Dropdown({ header, selections }) {
                 <h5 className="text-indigo-500 text-opacity-90 text-base font-medium cursor-pointer ">
                     {header}
                 </h5>
-                <BiPlus className="text-xl text-opacity-80 my-auto ml-auto" />
             </div>
             {expanded &&
                 selections &&
